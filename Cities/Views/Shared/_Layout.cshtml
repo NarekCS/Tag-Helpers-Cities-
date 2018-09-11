@@ -7,8 +7,9 @@
     <link href="~/bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
 </head>
 <body class="m-1 p-1">
-    <div>
-        @RenderBody()
+    <div show-for-action="Index" class="m-1 p-1 bg-danger"> 
+        <h2>Important Message</h2>
     </div>
+    <div title="Cities">@RenderBody()</div>
 </body>
 </html>

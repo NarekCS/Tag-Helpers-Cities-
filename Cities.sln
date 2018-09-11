@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28010.2019
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cities", "Cities\Cities.csproj", "{07AE3122-4050-4796-9023-D9B2826C15FD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TagHelpersTests", "TagHelpersTests\TagHelpersTests.csproj", "{FD198F31-61B5-40CE-857B-0DDA00AEC098}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{07AE3122-4050-4796-9023-D9B2826C15FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{07AE3122-4050-4796-9023-D9B2826C15FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{07AE3122-4050-4796-9023-D9B2826C15FD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FD198F31-61B5-40CE-857B-0DDA00AEC098}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD198F31-61B5-40CE-857B-0DDA00AEC098}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD198F31-61B5-40CE-857B-0DDA00AEC098}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD198F31-61B5-40CE-857B-0DDA00AEC098}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
