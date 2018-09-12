@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Cities.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -17,7 +18,12 @@ namespace Cities.Controllers
             repository = repo;
         }
         public ViewResult Index() => View(repository.Cities);
-        public ViewResult Create() => View();
+        public ViewResult Create()
+        {
+            // ViewBag.Countries = new SelectList(repository.Cities.Select(c => c.Country).Distinct());
+            return View();
+        }
+
 
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -26,7 +32,11 @@ namespace Cities.Controllers
             repository.AddCity(city);
             return RedirectToAction("Index");
         }
-        public ViewResult Edit() => View("Create", repository.Cities.First());
+        public ViewResult Edit()
+        {
+            // ViewBag.Countries = new SelectList(repository.Cities.Select(c => c.Country).Distinct());
+            return View("Create", repository.Cities.First());
+        }
 
     }
 }
