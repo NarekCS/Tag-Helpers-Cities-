@@ -4,13 +4,46 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>Cities</title>
-    <link href="~/bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"
+            asp-fallback-src-include="/bower_components/jquery/dist/**/*.min.js"
+            asp-fallback-src-exclude="**.slim.**"
+            asp-fallback-test="window.jQuery">
+    </script>
+    @*<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" 
+        asp-fallback-href-include="/bower_components/bootstrap/dist/**/*.min.css" 
+        asp-fallback-href-exclude="**/*-reboot*,**/*-grid*" 
+        asp-fallback-test-class="btn" 
+        asp-fallback-test-property="display" 
+        asp-fallback-test-value="inline-block" 
+        rel="stylesheet" />*@
+    <link href="~/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    @*<link rel="stylesheet" asp-href-include="~/bower_components/bootstrap/dist/**/*.min.css"
+        asp-href-exclude="**/*-reboot*, **/*-grid*"/>*@
+    @*<environment names="development">
+            <script asp-src-include="~/bower_components/jQuery/dist/**/j*.js" asp-src-exclude="**.slim.**, **.min**." asp-append-version="true"></script>
+        </environment>
+        <environment names="staging, production">
+            <script asp-src-include="~/bower_components/jQuery/dist/**/*.min.js" asp-src-exclude="**.slim.**" asp-append-version="true"></script>
+        </environment>*@
 </head>
 <body class="m-1 p-1">
     @*<div show-for-action="Index" class="m-1 p-1 bg-danger">
             <h2>Important Message</h2>
         </div>*@
     @*<div title="Cities">@RenderBody()</div>*@
+    <environment names="development">
+        <div class="m-1 p-1 bg-info"><h2>This is Development</h2></div>
+    </environment>
+    <environment names="production">
+        <div class="m-1 p-1 bg-danger"><h2>This is Production</h2></div>
+    </environment>
+    @*<img src="~/images/NY.jpg" asp-append-version="true"/>*@
+    @*<cache expires-after="@TimeSpan.FromSeconds(15)">*@
+    @*<cache expires-on="@DateTime.Parse("2100-01-01")">*@
+    @*<cache expires-sliding="@TimeSpan.FromSeconds(10)"  vary-by-route="action">*@
+    <cache expires-sliding="@TimeSpan.FromSeconds(10)" vary-by="@ViewContext.RouteData.Values["action"]">
+        @await Component.InvokeAsync("Time")
+    </cache>
     <div>@RenderBody()</div>
 </body>
 </html>

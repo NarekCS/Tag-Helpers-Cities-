@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Razor.TagHelpers;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.Mvc.Routing;
+using Microsoft.AspNetCore.Mvc.TagHelpers;
 using Microsoft.AspNetCore.Mvc.ViewFeatures;
 using Microsoft.AspNetCore.Razor.TagHelpers;
 using System;
@@ -9,7 +11,7 @@ using System.Linq;
 using System.Threading.Tasks;
 
 namespace Cities.Infrastructure.TagHelpers
-{
+{   
     public class FormTagHelper : TagHelper
     {
         private IUrlHelperFactory urlHelperFactory;
