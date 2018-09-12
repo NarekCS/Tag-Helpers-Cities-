@@ -13,16 +13,16 @@
     </div>
     <div class="form-group">
         @*<label helper-for="Country" />
-        <input helper-for="Country" />*@
+            <input helper-for="Country" />*@
         <label asp-for="Country"></label>
         @*<select class="form-control" asp-for="Country" asp-items="@new SelectList(Enum.GetNames(typeof(CountryNames)))">*@
         @*<select class="form-control" asp-for="Country" asp-items="ViewBag.Countries">*@
         <select class="form-control" model-for="Country">
             <option disabled selected value="">Select a Country</option>
             @*<option>UK</option>
-            <option>USA</option>
-            <option>France</option>
-            <option>China</option>*@
+                <option>USA</option>
+                <option>France</option>
+                <option>China</option>*@
         </select>
         @*<input class="form-control" asp-for="Country" />*@
     </div>
@@ -31,6 +31,10 @@
             <input helper-for="Population" />*@
         <label asp-for="Population"></label>
         <input class="form-control" asp-for="Population" /> @*asp-format="{0:#,###}"*@
+    </div>
+    <div class="form-group">  
+        <label asp-for="Notes"></label>
+        <textarea class="form-control" asp-for="Notes"></textarea>  
     </div>
     @*<formbutton type="submit" bg-color="danger" />
         <formbutton type="reset" />*@
