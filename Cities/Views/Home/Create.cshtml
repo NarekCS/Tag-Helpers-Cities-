@@ -2,33 +2,34 @@
 @{ 
     Layout = "_Layout";
     }
-<form method="post">
+<form method="post" asp-controller="Home" asp-action="Create" asp-antiforgery="true">
     <div class="form-group">
-        <label helper-for="Name" />
-        <input helper-for="Name" />
-        @*<label for="Name">Name:</label>
-            <input class="form-control" name="Name" />*@
+        @*<label helper-for="Name" />
+            <input helper-for="Name" />*@
+        <label asp-for="Name"></label>
+        <input class="form-control" asp-for="Name" />
     </div>
     <div class="form-group">
-        <label helper-for="Country" />
-        <input helper-for="Country" />
-        @*<label for="Country">Country:</label>
-            <input class="form-control" name="Country" />*@
+        @*<label helper-for="Country" />
+            <input helper-for="Country" />*@
+        <label asp-for="Country"></label>
+        <input class="form-control" asp-for="Country" />
     </div>
     <div class="form-group">
-        <label helper-for="Population" />
-        <input helper-for="Population" />
-        @*<label for="Population">Population:</label>
-            <input class="form-control" name="Population" />*@
+        @*<label helper-for="Population" />
+            <input helper-for="Population" />*@
+        <label asp-for="Population"></label>
+        <input class="form-control" asp-for="Population"/> @*asp-format="{0:#,###}"*@
     </div>
     @*<formbutton type="submit" bg-color="danger" />
-    <formbutton type="reset" />*@
-    <div theme="primary">   
-        <button type="submit">Add</button>
-        <button type="reset">Reset</button>  
-        <a href="/Home/Index">Cancel</a>   
-    </div>
+        <formbutton type="reset" />*@
+    @*<div theme="primary">
+            <button type="submit">Add</button>
+            <button type="reset">Reset</button>
+            <a href="/Home/Index">Cancel</a>
+        </div>*@
     @*<button type="submit" bs-button-color="danger">Add</button>
         <button type="reset" class="btn btn-primary">Reset</button>*@
-    @*<a bs-button-color="primary" href="/Home/Index">Cancel</a>*@
+    <button type="submit" class="btn btn-primary">Add</button>
+    <a bs-button-color="primary" href="/Home/Index">Cancel</a>
 </form>
